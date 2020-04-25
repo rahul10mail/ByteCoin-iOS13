@@ -15,12 +15,12 @@ class ViewController: UIViewController {
     var coinManager = CoinManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let currency = coinManager.currencyArray[0]
-        currencyLabel.text = currency
-        coinManager.getCoinPrice(for: currency)
         currencyPicker.dataSource = self
         currencyPicker.delegate = self
         coinManager.delegate = self
+        let currency = coinManager.currencyArray[0]
+        currencyLabel.text = currency
+        coinManager.getCoinPrice(for: currency)
     }
 }
 
